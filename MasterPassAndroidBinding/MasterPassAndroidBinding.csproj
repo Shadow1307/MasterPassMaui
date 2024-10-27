@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-android</TargetFramework>
+    <SupportedOSPlatformVersion>21</SupportedOSPlatformVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="libphonenumber-csharp" Version="8.13.47" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Auth" Version="121.2.0.2" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Auth.Api.Phone" Version="118.1.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidLibrary Update="liblite-masterpass-release-V1.1.62.aar">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AndroidLibrary>
+  </ItemGroup>
+</Project>

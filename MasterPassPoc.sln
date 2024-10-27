@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterPassAndroidBinding", "MasterPassAndroidBinding\MasterPassAndroidBinding.csproj", "{B720B53D-720A-45AE-B9CC-6E43D961E43F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MasterPassPoc", "MauiProj\MasterPassPoc.csproj", "{937BBDF4-3EE8-4649-B06E-278C7651A10B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B720B53D-720A-45AE-B9CC-6E43D961E43F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B720B53D-720A-45AE-B9CC-6E43D961E43F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B720B53D-720A-45AE-B9CC-6E43D961E43F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B720B53D-720A-45AE-B9CC-6E43D961E43F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{937BBDF4-3EE8-4649-B06E-278C7651A10B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{937BBDF4-3EE8-4649-B06E-278C7651A10B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{937BBDF4-3EE8-4649-B06E-278C7651A10B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{937BBDF4-3EE8-4649-B06E-278C7651A10B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{937BBDF4-3EE8-4649-B06E-278C7651A10B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{937BBDF4-3EE8-4649-B06E-278C7651A10B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8AA0B95-6BA3-46FC-A7B7-F95821D18DBF}
+	EndGlobalSection
+EndGlobal
