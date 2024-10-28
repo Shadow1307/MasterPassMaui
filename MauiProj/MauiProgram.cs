@@ -21,6 +21,12 @@ namespace MasterPassPoc
 #if ANDROID
             builder.Services.AddSingleton<IMasterPassService, MasterPassService>();
 #endif
+            
+
+            // Register MainPage and AppShell
+            builder.Services.AddTransient<MainPage>();
+            builder.Services.AddSingleton<AppShell>();
+
             return builder.Build();
         }
     }

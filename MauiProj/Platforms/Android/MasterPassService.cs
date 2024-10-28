@@ -7,80 +7,62 @@ namespace MasterPassPoc.Platforms.Android
 {
     public class MasterPassService : IMasterPassService
     {
-        #region Fields
+        private readonly string _apiKey;
+        private readonly string _system;
+        private readonly Context _context;
 
-        private readonly IConfigurationManager _configurationManager;
-
-        #endregion
-
-        #region Constructors
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MasterPassService"/> class.
-        /// </summary>
-        public MasterPassService(IConfigurationManager configurationManager)
+        public MasterPassService(IConfiguration configuration)
         {
-            _configurationManager = configurationManager;
+            _apiKey = "{{APIKEY}}";
+            _system = "TEST";
+            _context = MauiApplication.Current.ApplicationContext;
         }
-
-        #endregion
 
         public void PerformCheckout(string transactionCode)
         {
-            var context = MauiApplication.Current.ApplicationContext;
-
-            var apiKey = "{{ApiKey}}";
-            var system = "{{SystemValue}}";
-            Intent intent = new Intent(context, typeof(LibLiteActivity));
-            intent.PutExtra(LibLiteActivity.InApiKey, apiKey);
+            Intent intent = new Intent(_context, typeof(LibLiteActivity));
+            intent.PutExtra(LibLiteActivity.InApiKey, _apiKey);
             intent.PutExtra(LibLiteActivity.InCode, transactionCode);
-            intent.PutExtra(LibLiteActivity.InSystem, system);
+            intent.PutExtra(LibLiteActivity.InSystem, _system);
+            intent.AddFlags(ActivityFlags.NewTask);
 
-            context.StartActivity(intent);
+            var currentActivity = Platform.CurrentActivity;
+            currentActivity.StartActivityForResult(intent, 101);
         }
 
         public void PreRegisterUser()
         {
-            var context = MauiApplication.Current.ApplicationContext;
+            Intent intent = new Intent(_context, typeof(LibLitePreRegActivity));
+            intent.PutExtra(LibLiteActivity.InApiKey, _apiKey);
+            intent.PutExtra(LibLiteActivity.InSystem, _system);
+            intent.AddFlags(ActivityFlags.NewTask);
 
-            var apiKey = "{{ApiKey}}";
-            var system = "{{SystemValue}}";
-
-            Intent intent = new Intent(context, typeof(LibLitePreRegActivity));
-            intent.PutExtra(LibLiteActivity.InApiKey, apiKey);
-            intent.PutExtra(LibLiteActivity.InSystem, system);
-
-            context.StartActivity(intent);
+            var currentActivity = Platform.CurrentActivity;
+            currentActivity.StartActivityForResult(intent, 101);
         }
 
         public void DisplayWallet()
         {
-            var context = MauiApplication.Current.ApplicationContext;
+            Intent intent = new Intent(_context, typeof(LibLiteWalletActivity));
+            intent.PutExtra(LibLiteActivity.InApiKey, _apiKey);
+            intent.PutExtra(LibLiteActivity.InSystem, _system);
+            intent.AddFlags(ActivityFlags.NewTask);
 
-            var apiKey = "{{ApiKey}}";
-            var system = "{{SystemValue}}";
-
-            Intent intent = new Intent(context, typeof(LibLiteWalletActivity));
-            intent.PutExtra(LibLiteActivity.InApiKey, apiKey);
-            intent.PutExtra(LibLiteActivity.InSystem, system);
-
-            context.StartActivity(intent);
+            var currentActivity = Platform.CurrentActivity;
+            currentActivity.StartActivityForResult(intent, 101);
         }
 
         public void PerformTipAnAttendantCheckout(double amount, string transactionCode)
         {
-            var context = MauiApplication.Current.ApplicationContext;
-
-            var apiKey = "{{ApiKey}}";
-            var system = "{{SystemValue}}";
-
-            Intent intent = new Intent(context, typeof(LibLiteActivity));
-            intent.PutExtra(LibLiteActivity.InApiKey, apiKey);
+            Intent intent = new Intent(_context, typeof(LibLiteActivity));
+            intent.PutExtra(LibLiteActivity.InApiKey, _apiKey);
             intent.PutExtra(LibLiteActivity.InCode, transactionCode);
-            intent.PutExtra(LibLiteActivity.InSystem, system);
+            intent.PutExtra(LibLiteActivity.InSystem, _system);
             intent.PutExtra(LibLiteActivity.InAmount, amount);
+            intent.AddFlags(ActivityFlags.NewTask);
 
-            context.StartActivity(intent);
+            var currentActivity = Platform.CurrentActivity;
+            currentActivity.StartActivityForResult(intent, 101);
         }
     }
 }

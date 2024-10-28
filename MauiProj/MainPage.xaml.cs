@@ -27,7 +27,7 @@ namespace MasterPassPoc
 
         private void MasterPassClicked(object sender, EventArgs e)
         {
-            _masterPassService.PreRegisterUser();
+            _masterPassService.DisplayWallet();
         }
     }
 
